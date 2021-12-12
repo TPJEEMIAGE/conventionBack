@@ -1,0 +1,22 @@
+Sub CalculRemise()
+    Dim SommeDue As Double
+    Dim Remise As Double
+    Dim Metier As String
+    
+    Metier = InputBox("Entrez votre métier")
+    SommeDue = InputBox("Entrez la somme que vous devez")
+    Remise = 0
+	
+    If (Metier = "Grossiste") Then
+        Remise = SommeDue * 0.1
+    End If
+	
+    If (SommeDue > 10000) Then
+        Remise = SommeDue * 0.05
+    End If
+	
+    SommeDue = SommeDue - Remise
+    MsgBox ("Remise Appliquée : " & Remise & Chr(13) & "Montant du : " & SommeDue)
+End Sub
+
+
