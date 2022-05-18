@@ -17,6 +17,7 @@
 	$query->bindParam(":adresse",$data->adresse,PDO::PARAM_STR);
 	$query->bindParam(":idEntreprise",$data->idEntreprise,PDO::PARAM_STR);
 	$query->execute();
+	echo json_encode($query->debugDumpParams());
 
 	$query = $pdo->prepare("SELECT LAST_INSERT_ID() AS id;");
 	$query->execute();
@@ -30,5 +31,5 @@
 	while($ligne = $query->fetch(PDO::FETCH_ASSOC)){
 		$finalTab[] = $ligne; 
 	}
-	echo json_encode($finalTab);
+	//echo json_encode($finalTab);
 ?>
